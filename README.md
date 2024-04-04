@@ -7,6 +7,13 @@ estate with an admin panel. Moreover a web application that will display real es
 The system will allow users to create their accounts and save their real estate preferences in their wish lists.
 The web application will be accessed throughout different location, mainly Dubai and UAE.
 
+## System alt statements:
+
+1. System will allow authentication of users with different roles including agency staff, system admin and customer
+2. System should allow agency staff to add, modify, list real estate properties
+3. System will be accessed by guest users and they can list but not do any transaction unless registered as customers
+4. System will allow tracking of customer preferences in their listing.
+
 ## 1st Iteration:
 
 ![alt text](class-diagram.png)
