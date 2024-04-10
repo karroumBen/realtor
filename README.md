@@ -17,3 +17,6 @@ The web application will be accessed throughout different location, mainly Dubai
 ## 1st Iteration:
 
 ![alt text](class-diagram.png)
+
+## 2nd Iteration:
+![alt text](image.png)
