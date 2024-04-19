@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,6 +18,11 @@ public class RealEstate {
     private String name;
     private double price;
     private String description;
-    @OneToOne
+    private Integer rooms;
+    private Integer baths;
+    private Double area;
+    private Boolean isFurnished = false;
+    private LocalDate createdAt = LocalDate.now();
+    @OneToOne(cascade = CascadeType.ALL)
     private Address address;
 }

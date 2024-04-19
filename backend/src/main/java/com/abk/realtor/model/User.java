@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -18,10 +19,14 @@ public class User {
     private Integer id;
     private String firstName;
     private String lastName;
+    @Column(unique = true)
     private String email;
     private LocalDate dob;
+    private LocalDate createdAt;
     @OneToOne
     private Address address;
-    @OneToMany
-    private List<Role> roles;
+    @ManyToMany(cascade =  CascadeType.MERGE)
+    @JoinTable(name = "users_roles")
+    private List<Role> roles = new ArrayList<>();
+
 }

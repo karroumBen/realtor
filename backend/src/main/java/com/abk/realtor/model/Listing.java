@@ -17,6 +17,4 @@ public class Listing {
     private Integer id;
     @OneToMany
     private List<RealEstate> realEstate;
-    @OneToOne
-    private User user;
 }
