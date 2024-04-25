@@ -21,25 +21,22 @@ import {
   HamburgerIcon,
   CloseIcon,
 } from '@chakra-ui/icons'
-import LOGO from '../assets/images/bid.png';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { resetUser } from '../store/auth';
+import LOGO from '../assets/images/realtor.png';
+import { useDispatch, useSelector } from 'react-redux';
+import { resetUser } from '../store/auth';
 import { useNavigate } from 'react-router-dom';
 
 export default function WithSubnavigation() {
   const navigate = useNavigate();
   const { isOpen, onToggle } = useDisclosure();
-  // const dispatch = useDispatch();
-  // const auth  = useSelector((state) => state.auth);
-  const auth = {
-    isAuthenticated: false
-  };
+  const dispatch = useDispatch();
+  const auth  = useSelector((state) => state.auth);
 
-  // const logout = () => {
-  //   localStorage.removeItem('accessToken');
-  //   dispatch(resetUser());
-  //   navigate('/login')
-  // }
+  const logout = () => {
+    localStorage.removeItem('accessToken');
+    dispatch(resetUser());
+    navigate('/login')
+  }
 
   const navigateToTransactions = () => {
     navigate('/transactions')
@@ -92,20 +89,20 @@ export default function WithSubnavigation() {
                 variant={'link'}
                 cursor={'pointer'}
                 minW={0}>
-                {/* <Avatar bg='blue.400' color='white' name={auth.name} src='https://bit.ly/tioluwani-kolawole' /> */}
+                <Avatar bg='blue.400' color='white' name={auth.name} src='https://bit.ly/tioluwani-kolawole' />
               </MenuButton>
               <MenuList>
-                {/* <MenuGroup title='Profile'>
+                <MenuGroup title='Profile'>
                   { !auth.isSeller && <>
                     <MenuItem onClick={navigateToTransactions}>My bids</MenuItem>
                     <MenuItem onClick={navigateToList}>Biding items</MenuItem>
                   </>}
                   
-                </MenuGroup> */}
+                </MenuGroup>
                 <MenuDivider />
 
                 <MenuGroup>
-                  {/* <MenuItem as='button' onClick={logout}>Log out</MenuItem> */}
+                  <MenuItem as='button' onClick={logout}>Log out</MenuItem>
                 </MenuGroup>
               </MenuList>
             </Menu>

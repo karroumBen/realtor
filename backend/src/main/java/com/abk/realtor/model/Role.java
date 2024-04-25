@@ -20,4 +20,7 @@ public class Role {
     private String name;
 
 
+    public Object getRoleName() {
+        return name;
+    }
 }

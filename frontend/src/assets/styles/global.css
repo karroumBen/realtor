@@ -1,0 +1,25 @@
+
+.container {
+  margin: 0 10rem;
+  margin-top: 1rem;
+}
+
+.main-content {
+  
+}
+
+.biding-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.seller-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 2px solid #eee;
+  padding: 1rem;
+
+}
