@@ -34,9 +34,7 @@ export default function CallToActionWithAnnotation() {
             </Text>
           </Heading>
           <Text color={'gray.500'}>
-            Monetize your content by charging your most loyal readers and reward them
-            loyalty points. Give back to your loyal readers by granting them access to
-            your pre-releases and sneak-peaks.
+            Start monitoring your real estate with our Realtor solutions.
           </Text>
           <Stack
             direction={'column'}
