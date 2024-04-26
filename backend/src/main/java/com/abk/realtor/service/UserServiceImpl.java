@@ -1,4 +1,4 @@
-package com.abk.realtor.service.impl;
+package com.abk.realtor.service;
 
 import com.abk.realtor.dto.RegisterForm;
 import com.abk.realtor.model.User;

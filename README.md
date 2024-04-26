@@ -20,3 +20,16 @@ The web application will be accessed throughout different location, mainly Dubai
 
 ## 2nd Iteration:
 ![alt text](image.png)
+
+## 3rd Iteration:
+
+### Frontend
+![alt text](image-1.png)
+
+### REST API endpoints
+
+![alt text](image-2.png)
+
+### ER Diagram
+
+![alt text](image-3.png)

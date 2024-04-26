@@ -89,7 +89,7 @@ export default function WithSubnavigation() {
                 variant={'link'}
                 cursor={'pointer'}
                 minW={0}>
-                <Avatar bg='blue.400' color='white' name={auth.name} src='https://bit.ly/tioluwani-kolawole' />
+                <Avatar bg='blue.400' color='white' name={auth.username} src='https://bit.ly/tioluwani-kolawole' />
               </MenuButton>
               <MenuList>
                 <MenuGroup title='Profile'>

@@ -30,7 +30,7 @@ export default function CallToActionWithAnnotation() {
             lineHeight={'110%'}>
             Make money from <br />
             <Text as={'span'} color={'green.400'}>
-              your favorite auction platform
+              your favorite realtor
             </Text>
           </Heading>
           <Text color={'gray.500'}>

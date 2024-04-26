@@ -1,4 +1,4 @@
-package com.abk.realtor.service.impl;
+package com.abk.realtor.service;
 
 import com.abk.realtor.model.Role;
 import com.abk.realtor.repository.RoleRepository;

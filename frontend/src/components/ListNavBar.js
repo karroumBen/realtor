@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import {
   Box,
   Flex,
@@ -6,35 +5,13 @@ import {
   InputGroup,
   InputLeftElement,
   Button,
-  Select,
-  IconButton,
   Icon,
   Text,
   useColorModeValue,
-  FormControl,
 } from '@chakra-ui/react';
-import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
-import { useSelector } from 'react-redux';
+import { ChevronRightIcon } from '@chakra-ui/icons';
 
-const ListNavBar = ({ title, handleModel, paginate }) => {
-  const auth = useSelector(state => state.auth);
-  const [itemsPerPage, setItemsPerPage] = useState(5);
-
-  const setPagination = (e) => {
-    setItemsPerPage(e.target.value);
-    paginate(+e.target.value);
-  }
-
-  const search = () => {
-
-  }
-
-  const nextPage = () => {
-
-  }
-  const previousPage = () => {
-
-  }
+const ListNavBar = ({ title, handleModel, search }) => {
   return (
     <Flex
       mb={'15px'}
@@ -70,50 +47,18 @@ const ListNavBar = ({ title, handleModel, paginate }) => {
 
 
           <Flex display="flex" gap={'10px'} justify="space-between">
-            <IconButton
-              ml="4"
-              size="sm"
-              aria-label="Previous Page"
-              icon={<ChevronLeftIcon />}
-              onClick={nextPage}
-            />
 
-              
-            <FormControl>
-              <Select
-                mx="2"
-                size="sm"
-                value={itemsPerPage}
-                onChange={setPagination}
+            </Flex>
+              <Button
+                px={6}
+                ml={10}
+                colorScheme="green"
+                size={"md"}
+                onClick={handleModel}
               >
-                <option value={5}>5</option>
-                <option value={15}>15</option>
-                <option value={25}>25</option>
-              </Select>
-            </FormControl>
-
-            <IconButton
-              ml="4"
-              size="sm"
-              aria-label="Next Page"
-              icon={<ChevronRightIcon />}
-              onClick={previousPage}
-            />
-
+                Create new
+              </Button>
           </Flex>
-          {
-            auth.isSeller && 
-            <Button
-              px={6}
-              ml={10}
-              colorScheme="green"
-              size={"md"}
-              onClick={handleModel}
-            >
-              Create new
-            </Button>
-          }
-        </Flex>
       </Box>
     </Flex>
   );

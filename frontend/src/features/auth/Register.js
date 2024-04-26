@@ -41,7 +41,7 @@ const Register = () => {
     const { firstName, lastName } = userDetails;
     userDetails.name = firstName + lastName;
 
-    register(userDetails).then(({ data }) => {
+    register(userDetails).then(() => {
       toast({
         title: 'Yuupii',
         description: "Successfully done",
@@ -51,7 +51,7 @@ const Register = () => {
         position: 'top-right'
       })
       navigate('/login');
-    }).catch((error) => {
+    }).catch(() => {
       toast({
         title: 'Ooopsie!',
         description: "Something went wrong, please do not freak out",

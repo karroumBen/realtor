@@ -6,6 +6,9 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -18,9 +21,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class JwtUtilityService {
-    private final String SECRET="M0g9JhdFu8bMfnkbywETmTmhtuTI+3XYBt20zQqK4w0=";
-    private final SecretKey key = Keys.hmacShaKeyFor(Decoders.BASE64.decode(SECRET));
+    private String SECRET="M0g9JhdFu8bMfnkbywETmTmhtuTI+3XYBt20zQqK4w0=";
+    private SecretKey key = Keys.hmacShaKeyFor(Decoders.BASE64.decode(SECRET));
     public String generateToken(String username, String[] roles) {
         Map<String, Object> claims = new HashMap<>();
         claims.put("roles", roles);

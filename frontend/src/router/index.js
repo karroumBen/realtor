@@ -5,6 +5,8 @@ import Login from '../features/auth/Login';
 import Register from '../features/auth/Register';
 import NotAuthorizedPage from '../components/NotAuthorizedPage';
 import PageNotFound from '../components/PageNotFound';
+import PropertyList from '../features/propertyList';
+import PropertyDetails from "../components/PropertyDetails";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +16,14 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <App />,
+      },
+      {
+        path: "/properties",
+        element: <PropertyList />,
+      },
+      {
+        path: "/property/:id",
+        element: <PropertyDetails />,
       },
       {
         path: "/unauthorized",

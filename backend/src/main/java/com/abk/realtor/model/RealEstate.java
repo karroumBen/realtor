@@ -18,6 +18,7 @@ public class RealEstate {
     private String name;
     private double price;
     private String description;
+    private String imageLink = "";
     private Integer rooms;
     private Integer baths;
     private Double area;

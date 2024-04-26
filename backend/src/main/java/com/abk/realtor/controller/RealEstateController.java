@@ -2,7 +2,7 @@ package com.abk.realtor.controller;
 
 
 import com.abk.realtor.model.RealEstate;
-import com.abk.realtor.service.RealEstateService;
+import com.abk.realtor.service.RealEstateServiceImpl;
 import org.springframework.web.bind.annotation.RestController;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,14 +12,16 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/realEstates")
+@RequestMapping("/api/properties")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class RealEstateController {
 
     @Autowired
-    private RealEstateService realEstateService;
+    private RealEstateServiceImpl realEstateService;
 
-    @GetMapping
+    @GetMapping("/list")
     public List<RealEstate> getAllRealEstates() {
+        System.out.println("inside properties");
         return realEstateService.getAllRealEstates();
     }
 
@@ -28,17 +30,17 @@ public class RealEstateController {
         return realEstateService.getRealEstateById(id);
     }
 
-    @PostMapping
+    @PostMapping("/new")
     public RealEstate saveRealEstate(@RequestBody RealEstate realEstate) {
         return realEstateService.saveRealEstate(realEstate);
     }
 
-    @PutMapping("/{id}")
-    public RealEstate updateRealEstate(@PathVariable Integer id, @RequestBody RealEstate updatedRealEstate) {
-        return realEstateService.updateRealEstate(id, updatedRealEstate);
+    @PostMapping("/update")
+    public RealEstate updateRealEstate(@RequestBody RealEstate updatedRealEstate) {
+        return realEstateService.updateRealEstate(updatedRealEstate);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteRealEstate(@PathVariable Integer id) {
         realEstateService.deleteRealEstate(id);
     }

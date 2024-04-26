@@ -1,8 +1,9 @@
-# Use a base image with Java and Tomcat pre-installed
-FROM tomcat:9-jdk11-openjdk-slim
+FROM openjdk:11-jre-slim
 
-COPY target/backend-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
+WORKDIR /app
+
+COPY ./backend/target/*.jar app.jar
 
 EXPOSE 8080
 
-CMD ["catalina.sh", "run"]
+CMD ["java", "-jar", "app.jar"]
