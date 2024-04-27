@@ -33,3 +33,6 @@ The web application will be accessed throughout different location, mainly Dubai
 ### ER Diagram
 
 ![alt text](image-3.png)
+
+### HighLevel architecture:
+![alt text](image-4.png)

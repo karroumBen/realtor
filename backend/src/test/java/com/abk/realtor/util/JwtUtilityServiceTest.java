@@ -7,8 +7,10 @@ import io.jsonwebtoken.security.Keys;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.crypto.SecretKey;
+
 public class JwtUtilityServiceTest {
     private JwtUtilityService jwtUtilityService;
 
@@ -37,7 +39,6 @@ public class JwtUtilityServiceTest {
         Claims claims = jwtUtilityService.extractAllClaims(token);
         Assertions.assertNotNull(claims);
         Assertions.assertEquals(username, claims.getSubject());
-        // Assertions.assertArrayEquals(roles, claims.get("roles", String[].class));
     }
 
     @Test

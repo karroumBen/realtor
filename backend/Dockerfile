@@ -1,9 +1,3 @@
-FROM openjdk:11-jre-slim
+FROM tomcat:latest
+COPY ./target/backend-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
 
-WORKDIR /app
-
-COPY ./backend/target/*.jar app.jar
-
-EXPOSE 8080
-
-CMD ["java", "-jar", "app.jar"]
